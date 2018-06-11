@@ -4,8 +4,8 @@ const ads = [
     timeslots: [9, 10, 11, 12, 18, 19, 20, 36, 37, 38, 39],
     location: {
       type: 'Point',
-      coordinates: [114.150664, 22.284308], //
-      //
+      coordinates: [114.15891699999997, 22.2849],
+      // IFC Shopping Mall; Man Cheung Street, Central, Hong Kong
     },
   },
   {
@@ -13,7 +13,8 @@ const ads = [
     timeslots: [9, 10, 11, 12, 36, 37, 38, 39],
     location: {
       type: 'Point',
-      coordinates: [114.158308, 22.27881],
+      coordinates: [114.18250009999997, 22.2783863],
+      // Guess -Time Square Causeway Bay, Causeway Bay, Hong Kong
     },
   },
   {
@@ -21,7 +22,8 @@ const ads = [
     timeslots: [18, 19, 20, 36, 37, 38, 39, 90, 91, 92, 93],
     location: {
       type: 'Point',
-      coordinates: [114.160294, 22.283083],
+      coordinates: [114.18250009999997, 22.2783863],
+      // Pacific Place, Admiralty, Hong Kong
     },
   },
   {
@@ -29,7 +31,8 @@ const ads = [
     timeslots: [101, 102, 103, 104],
     location: {
       type: 'Point',
-      coordinates: [114.161217, 22.259109],
+      coordinates: [114.17317320000006, 22.2775561],
+      // Wan Chai Station, Hennessy Road, Wan Chai, Hong Kong
     },
   },
   {
@@ -37,7 +40,8 @@ const ads = [
     timeslots: [120, 121, 122, 123, 124],
     location: {
       type: 'Point',
-      coordinates: [114.176559, 22.27187],
+      coordinates: [114.18428979999999, 22.280385],
+      // SOGO Hong Kong, Hennessy Road, Causeway Bay, Hong Kong
     },
   },
   {
@@ -45,7 +49,8 @@ const ads = [
     timeslots: [36, 37, 38, 39, 120, 121, 122, 123, 124],
     location: {
       type: 'Point',
-      coordinates: [114.196523, 22.269381],
+      coordinates: [114.18105029999992, 22.2721651],
+      // Hong Kong Jockey Club Happy Valley Racecourse, Wong Nai Chung Road, Happy Valley, Hong Kong
     },
   },
   {
@@ -53,7 +58,8 @@ const ads = [
     timeslots: [120, 121, 122],
     location: {
       type: 'Point',
-      coordinates: [114.198644, 22.277058],
+      coordinates: [114.15064699999994, 22.2859606],
+      // Workington Tower, Bonham Strand, Sheung Wan, Hong Kong
     },
   },
 ];

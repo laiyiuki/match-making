@@ -38,6 +38,8 @@ It is not the only case that we need to query data and manipulate it to facilita
 * _GET_ /api/ads/ Return all ads
 * _GET_ /api/ads/search?studentId=xxx Return all ads match with specific student preferred > subject and time
 * _GET_ /api/ads/search?studentId=xxx&longitude=xx&latitude=xx&distance=xx Return all ads match with specific student preferred subject and time plus location within a distance
+  sample: longitude: 114.15204259999996, latitude: 22.286679, Sheung Wan station.
+  e.g. http://localhost:3000/api/ads/search?studentId=5b1e0ac92efe81ae771f89ad&longitude=114.15204259999996&latitude=22.286679&distance=1
 * _GET_ /seed/ Reset database with sample data
 
 # Reference
