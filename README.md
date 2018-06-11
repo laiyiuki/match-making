@@ -45,3 +45,4 @@ It is not the only case that we need to query data and manipulate it to facilita
 # Reference
 
 [Geospatial Queries](https://docs.mongodb.com/manual/geospatial-queries/)
+[GPS coordinates](https://www.maps.ie/coordinates.html)
