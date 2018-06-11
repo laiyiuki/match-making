@@ -33,12 +33,12 @@ It is not the only case that we need to query data and manipulate it to facilita
 
 # Endpoints
 
-_GET_ /api/students Return all students
-_GET_ /api/students/:id Return specific student
-_GET_ /api/ads/ Return all ads
-_GET_ /api/ads/search?studentId=xxx Return all ads match with specific student preferred subject and time
-_GET_ /api/ads/search?studentId=xxx&longitude=xx&latitude=xx&distance=xx Return all ads match with specific student preferred subject and time plus location within a distance
-_GET_ /seed/ Reset database with sample data
+* _GET_ /api/students Return all students
+* _GET_ /api/students/:id Return specific student
+* _GET_ /api/ads/ Return all ads
+* _GET_ /api/ads/search?studentId=xxx Return all ads match with specific student preferred > subject and time
+* _GET_ /api/ads/search?studentId=xxx&longitude=xx&latitude=xx&distance=xx Return all ads match with specific student preferred subject and time plus location within a distance
+* _GET_ /seed/ Reset database with sample data
 
 # Reference
 
