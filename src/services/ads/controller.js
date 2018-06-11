@@ -6,7 +6,6 @@ module.exports = {
   getAll,
   get,
   getAdsMatchWithStudent,
-  // getAdsMatchWithStudentAndLocation,
   getAdsMatch,
 };
 
@@ -36,36 +35,27 @@ async function get(req, res) {
 }
 
 async function getAdsMatchWithStudent(req, res) {
-  const { studentId } = req.params;
+  try {
+    const { studentId } = req.params;
+    const student = await Student.findOne({ _id: studentId });
 
-  const { subjects, timeslots } = await Student.findOne({ _id: studentId });
-  const result = await Ad.find({
-    subject: { $in: subjects },
-  });
+    if (!student) {
+      res.send({ status: 'fail', message: 'Student not found' });
+      return;
+    }
 
-  res.send({ result: result });
+    const { subjects, timeslots } = student;
+
+    const result = await Ad.find({
+      subject: { $in: subjects },
+      timeslots: { $in: timeslots },
+    });
+
+    res.send({ status: 'success', result: result });
+  } catch (err) {
+    res.send({ status: 'error', message: err });
+  }
 }
-
-// async function getAdsMatchWithStudentAndLocation(req, res) {
-//   const { longitude, latitude, distance, studentId } = req.params;
-//
-//   const { subjects, timeslots } = await Student.findOne({ _id: studentId });
-//   const result = await Ad.find({
-//     subject: { $in: subjects },
-//     location: {
-//       $near: {
-//         $geometry: {
-//           type: 'Point',
-//           coordinates: [parseFloat(longitude), parseFloat(latitude)],
-//         },
-//         $minDistance: 0,
-//         $maxDistance: parseFloat(distance) * 1000,
-//       },
-//     },
-//   });
-//
-//   res.send({ result: result });
-// }
 
 async function getAdsMatch(req, res) {
   try {
@@ -73,7 +63,7 @@ async function getAdsMatch(req, res) {
 
     const student = await Student.findOne({ _id: studentId });
     if (!student) {
-      res.send({ status: 'success', message: 'Student not found' });
+      res.send({ status: 'fail', message: 'Student not found' });
       return;
     }
 
@@ -82,6 +72,7 @@ async function getAdsMatch(req, res) {
     if (longitude && latitude && distance) {
       query = {
         subject: { $in: subjects },
+        timeslots: { $in: timeslots },
         location: {
           $near: {
             $geometry: {
@@ -96,12 +87,13 @@ async function getAdsMatch(req, res) {
     } else {
       query = {
         subject: { $in: subjects },
+        timeslots: { $in: timeslots },
       };
     }
 
     const result = await Ad.find(query);
 
-    res.send({ result: result });
+    res.send({ status: 'success', result: result });
   } catch (err) {
     res.send({ status: 'error', message: err });
   }

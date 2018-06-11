@@ -15,9 +15,5 @@ router.get('/ads', AdCtrl.getAll);
 router.get('/ads/search', AdCtrl.getAdsMatch);
 router.get('/ads/:id', AdCtrl.get);
 router.get('/ads/student/:studentId', AdCtrl.getAdsMatchWithStudent);
-// router.get(
-//   '/ads/student/:studentId/:longitude/:latitude/:distance',
-//   AdCtrl.getAdsMatchWithStudentAndLocation,
-// );
 
 module.exports = router;

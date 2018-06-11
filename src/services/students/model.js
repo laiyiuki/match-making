@@ -1,16 +1,17 @@
 const mongoose = require('mongoose');
 const { Schema } = require('mongoose');
 
-const timeslot = new Schema({
-  days: { type: [String] },
-  startTime: { type: Date },
-  endTime: { type: Date },
-});
+// const timeslot = new Schema({
+//   days: { type: [String] },
+//   startTime: { type: Date },
+//   endTime: { type: Date },
+// });
 
 const studentSchema = new Schema(
   {
     subjects: { type: [String] },
-    timeslots: { type: [timeslot] },
+    // timeslots: { type: [timeslot] },
+    timeslots: { type: [Number] },
   },
   {
     timestamps: true,
